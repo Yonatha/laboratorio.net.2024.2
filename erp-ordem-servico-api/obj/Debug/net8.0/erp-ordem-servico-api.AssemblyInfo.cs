@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("erp-ordem-servico-api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+abb36538ab6c983ab44092f0fdb0b03ea70fd049")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+58104041395151e523249f6d53321f3f18ce979f")]
 [assembly: System.Reflection.AssemblyProductAttribute("erp-ordem-servico-api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("erp-ordem-servico-api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

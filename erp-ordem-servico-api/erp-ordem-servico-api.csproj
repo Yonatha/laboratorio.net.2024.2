@@ -6,7 +6,6 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <InvariantGlobalization>true</InvariantGlobalization>
     <RootNamespace>erp_ordem_servico_api</RootNamespace>
-    <RuntimeFrameworkVersion>8.0.6</RuntimeFrameworkVersion>
   </PropertyGroup>
 
   <ItemGroup>
