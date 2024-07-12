@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "P1ot7zV9lSY=",
+  "dgSpecHash": "a2qbTH2HRJk=",
   "success": true,
-  "projectFilePath": "C:\\projetos\\laboratorio\\erp-dotnet-aula-8\\erp-dotnet-aula-8.1\\erp-ordem-servico-api\\erp-ordem-servico-api.csproj",
+  "projectFilePath": "C:\\projetos\\laboratorio\\laboratorio.net.2024.2\\erp-ordem-servico-api\\erp-ordem-servico-api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\yonat\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\yonat\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

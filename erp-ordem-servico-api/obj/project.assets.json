@@ -1471,11 +1471,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\projetos\\laboratorio\\erp-dotnet-aula-8\\erp-dotnet-aula-8.1\\erp-ordem-servico-api\\erp-ordem-servico-api.csproj",
+      "projectUniqueName": "C:\\projetos\\laboratorio\\laboratorio.net.2024.2\\erp-ordem-servico-api\\erp-ordem-servico-api.csproj",
       "projectName": "erp-ordem-servico-api",
-      "projectPath": "C:\\projetos\\laboratorio\\erp-dotnet-aula-8\\erp-dotnet-aula-8.1\\erp-ordem-servico-api\\erp-ordem-servico-api.csproj",
+      "projectPath": "C:\\projetos\\laboratorio\\laboratorio.net.2024.2\\erp-ordem-servico-api\\erp-ordem-servico-api.csproj",
       "packagesPath": "C:\\Users\\yonat\\.nuget\\packages\\",
-      "outputPath": "C:\\projetos\\laboratorio\\erp-dotnet-aula-8\\erp-dotnet-aula-8.1\\erp-ordem-servico-api\\obj\\",
+      "outputPath": "C:\\projetos\\laboratorio\\laboratorio.net.2024.2\\erp-ordem-servico-api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\yonat\\AppData\\Roaming\\NuGet\\NuGet.Config",

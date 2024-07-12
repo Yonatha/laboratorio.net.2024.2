@@ -3,6 +3,7 @@ using LaboratorioDev.Entity;
 using LaboratorioDev.Data;
 using Microsoft.EntityFrameworkCore;
 using AutoMapper;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace LaboratorioDev.Services
 {
@@ -11,15 +12,12 @@ namespace LaboratorioDev.Services
         private readonly ErpDbContext  _context;
         private readonly IMapper _mapper;
         private readonly OrdemServicoAdapter _adapter;
-        private OrdemServicoDeleteResponseDto _response;
         
         public OrdemServicoService(ErpDbContext context, IMapper mapper, OrdemServicoAdapter adapter)
         {
             _context = context;
             _mapper = mapper;
             _adapter = adapter;
-
-            _response = new OrdemServicoDeleteResponseDto();
         }
 
         public async Task<List<OrdemServicoResponseDto>> GetAll()
@@ -28,7 +26,7 @@ namespace LaboratorioDev.Services
             return ordensServico.Select(os => _mapper.Map<OrdemServicoResponseDto>(os)).ToList();
         }
 
-        public async Task<OrdemServico> GetById(int id)
+        public async Task<OrdemServicoResponseDto> GetById(int id)
         {   
             var os = await _context.OrdemServico.FindAsync(id);
             return _adapter.ToDto(os);
@@ -71,33 +69,44 @@ namespace LaboratorioDev.Services
         }
 
         public async Task<OrdemServicoDeleteResponseDto> DeleteList(OrdemServicoDeleteRequestDto request)
-        {   
-            foreach (int numeroOs in request.NumeroLista)
+        {
+            var response = new OrdemServicoDeleteResponseDto();
+
+            foreach (int numero in request.NumeroLista)
             {
-                if (!performFalhaAction(OrdemServico ordemServico, numeroOs)){
-                    performSucessoAction(ordemServico, numeroOs);
+                var os = await _context.OrdemServico.FindAsync(numero);
+                if (! await hasFail(os, numero, response)){
+                    performSucessoAction(os, numero, response);
                 }
             }
-            return _response;  
+            return response;  
         }
 
 
-        public async Task<bool> hasFail(OrdemServico ordemServico, numeroOs)
+        public async Task<bool> hasFail(OrdemServico os, int numero, OrdemServicoDeleteResponseDto response)
         {
-            var ordemServico = await _context.OrdemServico.FindAsync(numeroOs);
-            if (ordemServico == null) {
-                _response.falha.Add(numeroOs);
-                return true
+            if (os == null) {
+                response.falha.Add(numero);
+                return true;
             }
 
             return false;
         }
 
-        public async Task performSucessoAction(OrdemServico ordemServico, numeroOs)
+        public async Task<List<int>> performSucessoAction(OrdemServico os, int numero, OrdemServicoDeleteResponseDto response)
         {
-            _context.OrdemServico.Remove(ordemServico);
+            _context.OrdemServico.Remove(os);
             await _context.SaveChangesAsync();
-            return _response.sucesso.Add(numeroOs);
+
+            if (response == null)
+                response = new OrdemServicoDeleteResponseDto();
+
+            if (response.sucesso == null)
+                response.sucesso = new List<int>();
+
+            response.sucesso.Add(numero);
+
+            return response.sucesso;
         }
     }
 }
