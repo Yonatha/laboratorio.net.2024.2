@@ -3,7 +3,7 @@ using LaboratorioDev.Entity;
 using LaboratorioDev.Data;
 using Microsoft.EntityFrameworkCore;
 using AutoMapper;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+using LaboratorioDev.Shared;
 
 namespace LaboratorioDev.Services
 {
@@ -12,101 +12,173 @@ namespace LaboratorioDev.Services
         private readonly ErpDbContext  _context;
         private readonly IMapper _mapper;
         private readonly OrdemServicoAdapter _adapter;
-        
-        public OrdemServicoService(ErpDbContext context, IMapper mapper, OrdemServicoAdapter adapter)
+        private readonly ILogger<OrdemServicoService> _logger;
+
+        public OrdemServicoService(
+            ErpDbContext context, 
+            IMapper mapper, 
+            OrdemServicoAdapter adapter,
+            ILogger<OrdemServicoService> logger)
         {
             _context = context;
             _mapper = mapper;
             _adapter = adapter;
+            _logger = logger;
         }
 
-        public async Task<List<OrdemServicoResponseDto>> GetAll()
+        public async Task<Result<List<OrdemServicoResponseDto>>> GetAll()
         {
-            var ordensServico = await _context.OrdemServico.ToListAsync();
-            return ordensServico.Select(os => _mapper.Map<OrdemServicoResponseDto>(os)).ToList();
-        }
-
-        public async Task<OrdemServicoResponseDto> GetById(int id)
-        {   
-            var os = await _context.OrdemServico.FindAsync(id);
-            return _adapter.ToDto(os);
-        }
-
-        public async Task<OrdemServicoResponseDto> Create(OrdemServicoRequestDto request)
-        {
-
-            var os = _adapter.ToEntity(request);
-            await _context.OrdemServico.AddAsync(os);
-            await _context.SaveChangesAsync();
-
-            return _mapper.Map<OrdemServicoResponseDto>(os);
-        }
-
-        public async Task<bool> Delete(int id)
-        {
-            var ordemServico = await _context.OrdemServico.FindAsync(id);
-
-            if (ordemServico != null)
+            try
             {
-                _context.OrdemServico.Remove(ordemServico);
-                await _context.SaveChangesAsync();
-                return true;
-            };
+                var ordensServico = await _context.OrdemServico.ToListAsync();
 
-            return false;  
-        }
+                var ordensServicoDto = ordensServico
+                    .Select(os => _mapper.Map<OrdemServicoResponseDto>(os))
+                    .ToList();
 
-        public async Task<OrdemServicoResponseDto> Update(int id, string descricao)
-        {
-            var os = await GetById(id);
-            if (os != null)
-            {
-                os.Descricao = descricao;
-                await _context.SaveChangesAsync();    
+                return Result<List<OrdemServicoResponseDto>>.Success(ordensServicoDto);
             }
-
-            return _mapper.Map<OrdemServicoResponseDto>(os);
+            catch (Exception ex)
+            {
+                var errorMessage = "Erro ao tentar obter os registros";
+                _logger.LogError(ex, errorMessage);
+                return Result<List<OrdemServicoResponseDto>>.Failure(errorMessage);
+            }
         }
 
-        public async Task<OrdemServicoDeleteResponseDto> DeleteList(OrdemServicoDeleteRequestDto request)
+        public async Task<Result<OrdemServicoResponseDto>> GetById(int id)
         {
-            var response = new OrdemServicoDeleteResponseDto();
-
-            foreach (int numero in request.NumeroLista)
+            try
             {
-                var os = await _context.OrdemServico.FindAsync(numero);
-                if (! await hasFail(os, numero, response)){
-                    performSucessoAction(os, numero, response);
+                var os = await _context.OrdemServico.FindAsync(id);
+
+                if (os == null)
+                {
+                    var errorMessage = $"OrdemServico with id {id} not found.";
+                    _logger.LogWarning(errorMessage);
+                    return Result<OrdemServicoResponseDto>.Failure(errorMessage);
                 }
+
+                var ordemServicoDto = _mapper.Map<OrdemServicoResponseDto>(os);
+                return Result<OrdemServicoResponseDto>.Success(ordemServicoDto);
             }
-            return response;  
+            catch (Exception ex)
+            {
+                var errorMessage = $"An error occurred while retrieving OrdemServico with id {id}.";
+                _logger.LogError(ex, errorMessage);
+                return Result<OrdemServicoResponseDto>.Failure(errorMessage);
+            }
         }
 
-
-        public async Task<bool> hasFail(OrdemServico os, int numero, OrdemServicoDeleteResponseDto response)
+        public async Task<Result<OrdemServicoResponseDto>> Create(OrdemServicoRequestDto request)
         {
-            if (os == null) {
-                response.falha.Add(numero);
-                return true;
-            }
+            try
+            {
+                var os = _adapter.ToEntity(request);
+                await _context.OrdemServico.AddAsync(os);
+                await _context.SaveChangesAsync();
 
-            return false;
+                var response = _mapper.Map<OrdemServicoResponseDto>(os);
+                return Result<OrdemServicoResponseDto>.Success(response);
+            }
+            catch (Exception ex)
+            {
+
+                var errorMessage = $"Não foi possível cadastrar a Ordem de Serviço";
+                _logger.LogError(ex, errorMessage);
+                return Result<OrdemServicoResponseDto>.Failure(errorMessage);
+            }
         }
 
-        public async Task<List<int>> performSucessoAction(OrdemServico os, int numero, OrdemServicoDeleteResponseDto response)
+        public async Task<Result<OrdemServicoResponseDto>> Delete(int id)
         {
-            _context.OrdemServico.Remove(os);
-            await _context.SaveChangesAsync();
+            try
+            {
+                var os = await _context.OrdemServico.FindAsync(id);
 
-            if (response == null)
-                response = new OrdemServicoDeleteResponseDto();
+                if (os == null)
+                {
+                    var errorMessage = $"OrdemServico with id {id} not found.";
+                    _logger.LogWarning(errorMessage);
+                    return Result<OrdemServicoResponseDto>.Failure(errorMessage);
+                }
 
-            if (response.sucesso == null)
-                response.sucesso = new List<int>();
+                _context.OrdemServico.Remove(os);
+                await _context.SaveChangesAsync();
 
-            response.sucesso.Add(numero);
+                var response = _mapper.Map<OrdemServicoResponseDto>(os);
+                return Result<OrdemServicoResponseDto>.Success(response);
+            }
+            catch (Exception ex)
+            {
+                var errorMessage = $"An error occurred while deleting OrdemServico with id {id}.";
+                _logger.LogError(ex, errorMessage);
+                return Result<OrdemServicoResponseDto>.Failure(errorMessage);
+            }
+        }
 
-            return response.sucesso;
+        public async Task<Result<OrdemServicoResponseDto>> Update(int id, string descricao)
+        {
+            try
+            {
+                var os = await _context.OrdemServico.FirstOrDefaultAsync(o => o.Numero == id);
+
+                if (os == null)
+                {
+                    var errorMessage = $"Ordem de serviço com número {id} não encontrada.";
+                    _logger.LogWarning(errorMessage);
+                    return Result<OrdemServicoResponseDto>.Failure(errorMessage);
+                }
+
+                os.Descricao = descricao;
+
+                await _context.SaveChangesAsync();
+
+                _logger.LogInformation($"Ordem de serviço com número {id} atualizada com sucesso.");
+
+                var ordemServicoDto = _mapper.Map<OrdemServicoResponseDto>(os);
+                return Result<OrdemServicoResponseDto>.Success(ordemServicoDto);
+            }
+            catch (Exception ex)
+            {
+                var errorMessage = $"Erro ao tentar atualizar a ordem de serviço com número {id}.";
+                _logger.LogError(ex, errorMessage);
+                return Result<OrdemServicoResponseDto>.Failure(errorMessage);
+            }
+        }
+
+        public async Task<Result<OrdemServicoDeleteResponseDto>> DeleteList(OrdemServicoDeleteRequestDto request)
+        {
+            try
+            {
+                var response = new OrdemServicoDeleteResponseDto();
+
+                foreach (int numero in request.NumeroLista)
+                {
+                    var os = await _context.OrdemServico.FindAsync(numero);
+
+                    if (os == null)
+                    {
+                        var errorMessage = $"Ordem de serviço {numero} não encontrada.";
+                        _logger.LogWarning(errorMessage);
+                        response.AddFailure(numero, errorMessage);
+                        continue;
+                    }
+
+                    _context.OrdemServico.Remove(os);
+                    await _context.SaveChangesAsync();
+
+                    response.AddSuccess(numero);
+                }
+
+                return Result<OrdemServicoDeleteResponseDto>.Success(response);
+            }
+            catch (Exception ex)
+            {
+                var errorMessage = "Erro ao tentar excluir a lista de ordens de serviço.";
+                _logger.LogError(ex, errorMessage);
+                return Result<OrdemServicoDeleteResponseDto>.Failure(errorMessage);
+            }
         }
     }
 }

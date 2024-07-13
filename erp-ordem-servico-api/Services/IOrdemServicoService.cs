@@ -1,16 +1,15 @@
 using LaboratorioDev.Entity.Dto;
-using LaboratorioDev.Entity;
-using Microsoft.AspNetCore.Mvc;
+using LaboratorioDev.Shared;
 
 namespace LaboratorioDev.Services
 {
     public interface IOrdemServicoService
     {
-        Task<List<OrdemServicoResponseDto>> GetAll();
-        Task<OrdemServicoResponseDto> GetById(int id);
-        Task<OrdemServicoResponseDto> Create(OrdemServicoRequestDto request);
-        Task<bool> Delete(int id);
-        Task<OrdemServicoResponseDto> Update(int id, string descricao);
-        Task<OrdemServicoDeleteResponseDto> DeleteList(OrdemServicoDeleteRequestDto request);
+        Task<Result<List<OrdemServicoResponseDto>>> GetAll();
+        Task<Result<OrdemServicoResponseDto>> GetById(int id);
+        Task<Result<OrdemServicoResponseDto>> Create(OrdemServicoRequestDto request);
+        Task<Result<OrdemServicoResponseDto>> Delete(int id);
+        Task<Result<OrdemServicoResponseDto>> Update(int id, string descricao);
+        Task<Result<OrdemServicoDeleteResponseDto>> DeleteList(OrdemServicoDeleteRequestDto request);
     }
 }
