@@ -8,8 +8,8 @@ namespace erp_ordem_servico_api.Infrastructure.Persistence
         public ErpDbContext(DbContextOptions<ErpDbContext> options) : base(options) =>
             Database.EnsureCreated();
 
-        public DbSet<OrdemServico?> OrdemServico { get; set; }
-        public DbSet<AtvidiadeEntity?> Atividade { get; set; }
+        public DbSet<OrdemServicoEntity?> OrdemServico { get; set; }
+        public DbSet<AtividadeEntity?> Atividade { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

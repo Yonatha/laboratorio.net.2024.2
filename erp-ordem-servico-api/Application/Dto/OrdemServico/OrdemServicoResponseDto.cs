@@ -1,8 +1,8 @@
 namespace erp_ordem_servico_api.Dto.OrdemServico
 {
-    public class AtividadeResponseDto
+    public class OrdemServicoResponseDto
     {
-        public int Numero { get; set; }
+        public int Id { get; set; }
         public string? Descricao { get; set; }
     }
 }

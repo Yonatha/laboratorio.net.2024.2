@@ -21,7 +21,7 @@ namespace erp_ordem_servico_api.Presentation.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<AtividadeResponseDto>>> GetAll()
+        public async Task<ActionResult<List<OrdemServicoResponseDto>>> GetAll()
         {
             try
             {
@@ -40,7 +40,7 @@ namespace erp_ordem_servico_api.Presentation.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<AtividadeResponseDto>> GetById(int id)
+        public async Task<ActionResult<OrdemServicoResponseDto>> GetById(int id)
         {
             try
             {
@@ -58,7 +58,7 @@ namespace erp_ordem_servico_api.Presentation.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] AtividadeRequestDto request)
+        public async Task<IActionResult> Create([FromBody] OrdemServicoRequestDto request)
         {
             try
             {
@@ -91,7 +91,7 @@ namespace erp_ordem_servico_api.Presentation.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult<AtividadeResponseDto>> Update(int id, [FromBody] AtividadeRequestDto request)
+        public async Task<ActionResult<OrdemServicoResponseDto>> Update(int id, [FromBody] OrdemServicoRequestDto request)
         {
             try
             {

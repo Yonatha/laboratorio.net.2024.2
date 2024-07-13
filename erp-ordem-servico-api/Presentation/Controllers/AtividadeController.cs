@@ -1,6 +1,7 @@
 using erp_ordem_servico_api.Domain.Entities;
 using erp_ordem_servico_api.Dto.OrdemServico;
 using erp_ordem_servico_api.Infrastructure.Services;
+using LaboratorioDev.Dto.Atividade;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -11,9 +12,9 @@ namespace erp_ordem_servico_api.Presentation.Controllers
     public class AtividadeController : ControllerBase
     {
         private readonly ILogger<AtividadeController> _logger;
-        private readonly IGenericService<AtividadeRequestDto, AtividadeResponseDto, AtvidiadeEntity> _service;
+        private readonly IGenericService<AtividadeRequestDto, AtividadeResponseDto, AtividadeEntity> _service;
 
-        public AtividadeController(IGenericService<AtividadeRequestDto, AtividadeResponseDto, AtvidiadeEntity> service, ILogger<AtividadeController> logger)
+        public AtividadeController(IGenericService<AtividadeRequestDto, AtividadeResponseDto, AtividadeEntity> service, ILogger<AtividadeController> logger)
         {
             _service = service;
             _logger = logger;
@@ -92,9 +93,9 @@ namespace erp_ordem_servico_api.Presentation.Controllers
         [HttpPut("{id}")]
         public async Task<ActionResult<AtividadeResponseDto>> Update(int id, [FromBody] AtividadeRequestDto request)
         {
-            /* try
+            try
             {
-                var os = await _service.Update(id, request.Descricao);
+                var os = await _service.Update(id, request);
 
                 if (os == null)
                     return NotFound();
@@ -105,8 +106,7 @@ namespace erp_ordem_servico_api.Presentation.Controllers
             {
                 _logger.LogError(ex, $"Erro ao tentar atualizar a OS {id}.");
                 return StatusCode(500, "Erro interno do servidor.");
-            }*/
-            throw new NotImplementedException();
+            }
         }
     }
 }

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace erp_ordem_servico_api.Domain.Entities
 {
     [Table("ordem_servico")]
-    public class OrdemServico
+    public class OrdemServicoEntity
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]

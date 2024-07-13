@@ -52,9 +52,15 @@ namespace erp_ordem_servico_api.Infrastructure.Services
 
         public async Task<Result<TResponseDto>> Update(int id, TRequestDto request)
         {
-            var entity = _mapper.Map<TRequestDto, TEntity>(request);
-            entity = await _repository.Update(id, entity);
-            var dto = _mapper.Map<TEntity, TResponseDto>(entity);
+            var existingEntity = await _repository.GetById(id);
+            if (existingEntity == null)
+                return Result<TResponseDto>.Failure("Entity not found.");
+
+            _mapper.Map(request, existingEntity);
+
+            var updatedEntity = await _repository.Update(id, existingEntity);
+            var dto = _mapper.Map<TEntity, TResponseDto>(updatedEntity);
+
             return Result<TResponseDto>.Success(dto);
         }
 

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace erp_ordem_servico_api.Domain.Entities
 {
     [Table("atividades")]
-    public class AtvidiadeEntity
+    public class AtividadeEntity
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]

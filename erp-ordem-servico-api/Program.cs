@@ -1,5 +1,3 @@
-using erp_ordem_servico_api.Domain.Entities;
-using erp_ordem_servico_api.Dto.Atividade;
 using erp_ordem_servico_api.Infrastructure.Persistence;
 using erp_ordem_servico_api.Infrastructure.Persistence.Repositories;
 using erp_ordem_servico_api.Infrastructure.Services;
@@ -24,7 +22,7 @@ builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<AtividadeService>();
 
 builder.Services.AddAutoMapper(typeof(MappingProfile));
-builder.Services.AddSingleton<OrdemServicoAdapter>();
+builder.Services.AddSingleton<AtividadeAdapter>();
 
 var app = builder.Build();
 

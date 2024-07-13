@@ -10,13 +10,13 @@ namespace erp_ordem_servico_api.Infrastructure.Services.OrdemServico
     {
         private readonly ErpDbContext _context;
         private readonly IMapper _mapper;
-        private readonly OrdemServicoAdapter _adapter;
+        private readonly AtividadeAdapter _adapter;
         private readonly ILogger<OrdemServicoService> _logger;
 
         public OrdemServicoService(
             ErpDbContext context,
             IMapper mapper,
-            OrdemServicoAdapter adapter,
+            AtividadeAdapter adapter,
             ILogger<OrdemServicoService> logger)
         {
             _context = context;
@@ -25,27 +25,27 @@ namespace erp_ordem_servico_api.Infrastructure.Services.OrdemServico
             _logger = logger;
         }
 
-        public async Task<Result<List<AtividadeResponseDto>>> GetAll()
+        public async Task<Result<List<OrdemServicoResponseDto>>> GetAll()
         {
             try
             {
                 var ordensServico = await _context.OrdemServico.ToListAsync();
 
                 var ordensServicoDto = ordensServico
-                    .Select(os => _mapper.Map<AtividadeResponseDto>(os))
+                    .Select(os => _mapper.Map<OrdemServicoResponseDto>(os))
                     .ToList();
 
-                return Result<List<AtividadeResponseDto>>.Success(ordensServicoDto);
+                return Result<List<OrdemServicoResponseDto>>.Success(ordensServicoDto);
             }
             catch (Exception ex)
             {
                 var errorMessage = "Erro ao tentar obter os registros";
                 _logger.LogError(ex, errorMessage);
-                return Result<List<AtividadeResponseDto>>.Failure(errorMessage);
+                return Result<List<OrdemServicoResponseDto>>.Failure(errorMessage);
             }
         }
 
-        public async Task<Result<AtividadeResponseDto>> GetById(int id)
+        public async Task<Result<OrdemServicoResponseDto>> GetById(int id)
         {
             try
             {
@@ -55,21 +55,21 @@ namespace erp_ordem_servico_api.Infrastructure.Services.OrdemServico
                 {
                     var errorMessage = $"OrdemServico with id {id} not found.";
                     _logger.LogWarning(errorMessage);
-                    return Result<AtividadeResponseDto>.Failure(errorMessage);
+                    return Result<OrdemServicoResponseDto>.Failure(errorMessage);
                 }
 
-                var ordemServicoDto = _mapper.Map<AtividadeResponseDto>(os);
-                return Result<AtividadeResponseDto>.Success(ordemServicoDto);
+                var ordemServicoDto = _mapper.Map<OrdemServicoResponseDto>(os);
+                return Result<OrdemServicoResponseDto>.Success(ordemServicoDto);
             }
             catch (Exception ex)
             {
                 var errorMessage = $"An error occurred while retrieving OrdemServico with id {id}.";
                 _logger.LogError(ex, errorMessage);
-                return Result<AtividadeResponseDto>.Failure(errorMessage);
+                return Result<OrdemServicoResponseDto>.Failure(errorMessage);
             }
         }
 
-        public async Task<Result<AtividadeResponseDto>> Create(AtividadeRequestDto request)
+        public async Task<Result<OrdemServicoResponseDto>> Create(OrdemServicoRequestDto request)
         {
             try
             {
@@ -77,19 +77,19 @@ namespace erp_ordem_servico_api.Infrastructure.Services.OrdemServico
                 await _context.OrdemServico.AddAsync(os);
                 await _context.SaveChangesAsync();
 
-                var response = _mapper.Map<AtividadeResponseDto>(os);
-                return Result<AtividadeResponseDto>.Success(response);
+                var response = _mapper.Map<OrdemServicoResponseDto>(os);
+                return Result<OrdemServicoResponseDto>.Success(response);
             }
             catch (Exception ex)
             {
 
                 var errorMessage = $"Não foi possível cadastrar a Ordem de Serviço";
                 _logger.LogError(ex, errorMessage);
-                return Result<AtividadeResponseDto>.Failure(errorMessage);
+                return Result<OrdemServicoResponseDto>.Failure(errorMessage);
             }
         }
 
-        public async Task<Result<AtividadeResponseDto>> Delete(int id)
+        public async Task<Result<OrdemServicoResponseDto>> Delete(int id)
         {
             try
             {
@@ -99,24 +99,24 @@ namespace erp_ordem_servico_api.Infrastructure.Services.OrdemServico
                 {
                     var errorMessage = $"OrdemServico with id {id} not found.";
                     _logger.LogWarning(errorMessage);
-                    return Result<AtividadeResponseDto>.Failure(errorMessage);
+                    return Result<OrdemServicoResponseDto>.Failure(errorMessage);
                 }
 
                 _context.OrdemServico.Remove(os);
                 await _context.SaveChangesAsync();
 
-                var response = _mapper.Map<AtividadeResponseDto>(os);
-                return Result<AtividadeResponseDto>.Success(response);
+                var response = _mapper.Map<OrdemServicoResponseDto>(os);
+                return Result<OrdemServicoResponseDto>.Success(response);
             }
             catch (Exception ex)
             {
                 var errorMessage = $"An error occurred while deleting OrdemServico with id {id}.";
                 _logger.LogError(ex, errorMessage);
-                return Result<AtividadeResponseDto>.Failure(errorMessage);
+                return Result<OrdemServicoResponseDto>.Failure(errorMessage);
             }
         }
 
-        public async Task<Result<AtividadeResponseDto>> Update(int id, string descricao)
+        public async Task<Result<OrdemServicoResponseDto>> Update(int id, string descricao)
         {
             try
             {
@@ -126,7 +126,7 @@ namespace erp_ordem_servico_api.Infrastructure.Services.OrdemServico
                 {
                     var errorMessage = $"Ordem de serviço com número {id} não encontrada.";
                     _logger.LogWarning(errorMessage);
-                    return Result<AtividadeResponseDto>.Failure(errorMessage);
+                    return Result<OrdemServicoResponseDto>.Failure(errorMessage);
                 }
 
                 os.Descricao = descricao;
@@ -135,14 +135,14 @@ namespace erp_ordem_servico_api.Infrastructure.Services.OrdemServico
 
                 _logger.LogInformation($"Ordem de serviço com número {id} atualizada com sucesso.");
 
-                var ordemServicoDto = _mapper.Map<AtividadeResponseDto>(os);
-                return Result<AtividadeResponseDto>.Success(ordemServicoDto);
+                var ordemServicoDto = _mapper.Map<OrdemServicoResponseDto>(os);
+                return Result<OrdemServicoResponseDto>.Success(ordemServicoDto);
             }
             catch (Exception ex)
             {
                 var errorMessage = $"Erro ao tentar atualizar a ordem de serviço com número {id}.";
                 _logger.LogError(ex, errorMessage);
-                return Result<AtividadeResponseDto>.Failure(errorMessage);
+                return Result<OrdemServicoResponseDto>.Failure(errorMessage);
             }
         }
 

@@ -1,4 +1,4 @@
-namespace erp_ordem_servico_api.Dto.Atividade
+namespace LaboratorioDev.Dto.Atividade
 {
     public class AtividadeResponseDto
     {
