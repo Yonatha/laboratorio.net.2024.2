@@ -1,20 +1,19 @@
+using erp_ordem_servico_api.Domain.Entities;
 using erp_ordem_servico_api.Dto.OrdemServico;
-using erp_ordem_servico_api.Infrastructure.Services.OrdemServico;
+using erp_ordem_servico_api.Infrastructure.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace erp_ordem_servico_api.Presentation.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class OrdemServicoController : ControllerBase
+    public class AtividadeController : ControllerBase
     {
-        private readonly IOrdemServicoService _service;
-        private readonly ILogger<OrdemServicoController> _logger;
+        private readonly ILogger<AtividadeController> _logger;
+        private readonly IGenericService<AtividadeRequestDto, AtividadeResponseDto, AtvidiadeEntity> _service;
 
-        public OrdemServicoController(
-            IOrdemServicoService service,
-            ILogger<OrdemServicoController> logger
-        )
+        public AtividadeController(IGenericService<AtividadeRequestDto, AtividadeResponseDto, AtvidiadeEntity> service, ILogger<AtividadeController> logger)
         {
             _service = service;
             _logger = logger;
@@ -34,7 +33,7 @@ namespace erp_ordem_servico_api.Presentation.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Erro ao obter ordens de serviço.");
+                _logger.LogError(ex, "Erro ao obter registros.");
                 return StatusCode(500, "Erro interno do servidor.");
             }
         }
@@ -52,7 +51,7 @@ namespace erp_ordem_servico_api.Presentation.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, $"Erro ao obter ordens de serviço {id}.");
+                _logger.LogError(ex, $"Erro ao obter o registro {id}.");
                 return StatusCode(500, "Erro interno do servidor.");
             }
         }
@@ -67,7 +66,7 @@ namespace erp_ordem_servico_api.Presentation.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, $"Não foi possível cadastrar a OS.");
+                _logger.LogError(ex, $"Não foi possível cadastrar.");
                 return StatusCode(500, "Erro interno do servidor.");
             }
         }
@@ -85,7 +84,7 @@ namespace erp_ordem_servico_api.Presentation.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, $"Não foi possível deletar a OS {id}.");
+                _logger.LogError(ex, $"Não foi possível deletar o registro {id}.");
                 return StatusCode(500, "Erro interno do servidor.");
             }
         }
@@ -93,7 +92,7 @@ namespace erp_ordem_servico_api.Presentation.Controllers
         [HttpPut("{id}")]
         public async Task<ActionResult<AtividadeResponseDto>> Update(int id, [FromBody] AtividadeRequestDto request)
         {
-            try
+            /* try
             {
                 var os = await _service.Update(id, request.Descricao);
 
@@ -106,23 +105,8 @@ namespace erp_ordem_servico_api.Presentation.Controllers
             {
                 _logger.LogError(ex, $"Erro ao tentar atualizar a OS {id}.");
                 return StatusCode(500, "Erro interno do servidor.");
-            }
-        }
-
-        [HttpPost("deleteList")]
-        public async Task<ActionResult> DeleteList([FromBody] OrdemServicoDeleteRequestDto request)
-        {
-            try
-            {
-
-                var os = await _service.DeleteList(request);
-                return Ok(os);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, $"Erro ao tentar realizar a operação ");
-                return StatusCode(500, "Erro interno do servidor.");
-            }
+            }*/
+            throw new NotImplementedException();
         }
     }
 }

@@ -19,8 +19,4 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Infrastructure\Persistence\Repositories\" />
-  </ItemGroup>
-
 </Project>

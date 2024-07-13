@@ -1,7 +1,7 @@
 using erp_ordem_servico_api.Dto.OrdemServico;
 using erp_ordem_servico_api.Presentation;
 
-namespace erp_ordem_servico_api.Infrastructure.Services
+namespace erp_ordem_servico_api.Infrastructure.Services.OrdemServico
 {
     public interface IOrdemServicoService
     {
