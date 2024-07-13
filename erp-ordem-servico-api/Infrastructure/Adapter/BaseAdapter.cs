@@ -1,4 +1,4 @@
-namespace MapperVsAdapter.Application.Adapter
+namespace erp_ordem_servico_api.Infrastructure.Adapter
 {
     public class BaseAdapter<TEntity, TModel>
     {
@@ -50,10 +50,10 @@ namespace MapperVsAdapter.Application.Adapter
             foreach (var property in to)
             {
                 var fromProperty = from.FirstOrDefault(p => p.Name.Equals(property.Name) && p.CanWrite);
-                if(fromProperty != null) properties.Add(property.Name);
+                if (fromProperty != null) properties.Add(property.Name);
             }
 
-            return properties;  
+            return properties;
         }
     }
 }

@@ -1,6 +1,6 @@
-namespace LaboratorioDev.Entity.Dto
+namespace erp_ordem_servico_api.Dto.OrdemServico
 {
-    public class OrdemServicoResponseDto
+    public class AtividadeResponseDto
     {
         public int Numero { get; set; }
         public string? Descricao { get; set; }

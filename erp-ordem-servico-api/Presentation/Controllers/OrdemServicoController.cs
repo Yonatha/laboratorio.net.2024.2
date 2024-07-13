@@ -1,8 +1,8 @@
-using LaboratorioDev.Entity.Dto;
-using LaboratorioDev.Services;
+using erp_ordem_servico_api.Dto.OrdemServico;
+using erp_ordem_servico_api.Infrastructure.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Controllers 
+namespace erp_ordem_servico_api.Presentation.Controllers
 {
     [ApiController]
     [Route("[controller]")]
@@ -21,7 +21,7 @@ namespace Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<OrdemServicoResponseDto>>> GetAll()
+        public async Task<ActionResult<List<AtividadeResponseDto>>> GetAll()
         {
             try
             {
@@ -32,14 +32,15 @@ namespace Controllers
 
                 return Ok(response);
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 _logger.LogError(ex, "Erro ao obter ordens de serviço.");
                 return StatusCode(500, "Erro interno do servidor.");
             }
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<OrdemServicoResponseDto>> GetById(int id)
+        public async Task<ActionResult<AtividadeResponseDto>> GetById(int id)
         {
             try
             {
@@ -57,7 +58,7 @@ namespace Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] OrdemServicoRequestDto request)
+        public async Task<IActionResult> Create([FromBody] AtividadeRequestDto request)
         {
             try
             {
@@ -90,7 +91,7 @@ namespace Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult<OrdemServicoResponseDto>> Update( int id, [FromBody] OrdemServicoRequestDto request )
+        public async Task<ActionResult<AtividadeResponseDto>> Update(int id, [FromBody] AtividadeRequestDto request)
         {
             try
             {

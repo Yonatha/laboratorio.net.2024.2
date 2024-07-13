@@ -1,5 +1,5 @@
-using LaboratorioDev.Data;
-using LaboratorioDev.Services;
+using erp_ordem_servico_api.Infrastructure.Persistence;
+using erp_ordem_servico_api.Infrastructure.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 

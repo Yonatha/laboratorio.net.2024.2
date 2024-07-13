@@ -1,18 +1,18 @@
-using LaboratorioDev.Entity;
-using LaboratorioDev.Entity.Dto;
+using erp_ordem_servico_api.Domain.Entities;
+using erp_ordem_servico_api.Dto.OrdemServico;
 
 public class OrdemServicoAdapter
 {
-    public OrdemServicoResponseDto ToDto(OrdemServico ordemServico)
+    public AtividadeResponseDto ToDto(OrdemServico ordemServico)
     {
-        return new OrdemServicoResponseDto
+        return new AtividadeResponseDto
         {
             Numero = ordemServico.Numero,
             Descricao = ordemServico.Descricao
         };
     }
 
-    public OrdemServico ToEntity(OrdemServicoRequestDto requestDto)
+    public OrdemServico ToEntity(AtividadeRequestDto requestDto)
     {
         return new OrdemServico
         {

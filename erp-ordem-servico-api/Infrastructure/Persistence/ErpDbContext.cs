@@ -1,14 +1,15 @@
-using LaboratorioDev.Entity;
+using erp_ordem_servico_api.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace LaboratorioDev.Data
+namespace erp_ordem_servico_api.Infrastructure.Persistence
 {
     public class ErpDbContext : DbContext
     {
         public ErpDbContext(DbContextOptions<ErpDbContext> options) : base(options) =>
             Database.EnsureCreated();
-        
+
         public DbSet<OrdemServico?> OrdemServico { get; set; }
+        public DbSet<Atividade?> Atividade { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -24,7 +25,7 @@ namespace LaboratorioDev.Data
                 optionsBuilder.UseMySql(connection, serverVersion);
             }
         }
-        
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
         }

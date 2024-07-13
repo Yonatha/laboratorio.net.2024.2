@@ -1,4 +1,4 @@
-﻿namespace LaboratorioDev.Shared
+﻿namespace erp_ordem_servico_api.Presentation
 {
     public class Result<T>
     {

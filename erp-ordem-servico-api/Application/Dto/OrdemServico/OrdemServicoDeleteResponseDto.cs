@@ -1,4 +1,4 @@
-namespace LaboratorioDev.Entity.Dto
+namespace erp_ordem_servico_api.Dto.OrdemServico
 {
     public class OrdemServicoDeleteResponseDto
     {

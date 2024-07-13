@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace LaboratorioDev.Entity
+namespace erp_ordem_servico_api.Domain.Entities
 {
     [Table("ordem_servico")]
     public class OrdemServico
