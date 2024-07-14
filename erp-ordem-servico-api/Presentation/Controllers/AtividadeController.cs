@@ -39,6 +39,21 @@ namespace erp_ordem_servico_api.Presentation.Controllers
             }
         }
 
+        [HttpPost]
+        public async Task<IActionResult> Create([FromBody] AtividadeRequestDto request)
+        {
+            try
+            {
+                var os = await _service.Create(request);
+                return Created(string.Empty, os);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Não foi possível cadastrar.");
+                return StatusCode(500, "Erro interno do servidor.");
+            }
+        }
+
         [HttpGet("{id}")]
         public async Task<ActionResult<AtividadeResponseDto>> GetById(int id)
         {
@@ -53,21 +68,6 @@ namespace erp_ordem_servico_api.Presentation.Controllers
             catch (Exception ex)
             {
                 _logger.LogError(ex, $"Erro ao obter o registro {id}.");
-                return StatusCode(500, "Erro interno do servidor.");
-            }
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Create([FromBody] AtividadeRequestDto request)
-        {
-            try
-            {
-                var os = await _service.Create(request);
-                return Ok(os);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, $"Não foi possível cadastrar.");
                 return StatusCode(500, "Erro interno do servidor.");
             }
         }
