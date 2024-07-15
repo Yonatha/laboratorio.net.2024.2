@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("erp-ordem-servico-api.tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e6bb6d6b14ff77ce588df80f9d0f1f6d6b5422aa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b920cfe5e2d95c8833c6c6290a40650292aa170a")]
 [assembly: System.Reflection.AssemblyProductAttribute("erp-ordem-servico-api.tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("erp-ordem-servico-api.tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

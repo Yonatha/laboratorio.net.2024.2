@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "C:\\projetos\\laboratorio\\laboratorio.net.2024.2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6A8C0C18-5821-48B0-8BA2-ED24A6B5D8C7}|erp-ordem-servico-api.tests\\erp-ordem-servico-api.tests.csproj|c:\\projetos\\laboratorio\\laboratorio.net.2024.2\\erp-ordem-servico-api.tests\\erpwebapplicationfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6A8C0C18-5821-48B0-8BA2-ED24A6B5D8C7}|erp-ordem-servico-api.tests\\erp-ordem-servico-api.tests.csproj|solutionrelative:erp-ordem-servico-api.tests\\erpwebapplicationfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6A8C0C18-5821-48B0-8BA2-ED24A6B5D8C7}|erp-ordem-servico-api.tests\\erp-ordem-servico-api.tests.csproj|c:\\projetos\\laboratorio\\laboratorio.net.2024.2\\erp-ordem-servico-api.tests\\presentationtest\\controllers\\atividadecontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6A8C0C18-5821-48B0-8BA2-ED24A6B5D8C7}|erp-ordem-servico-api.tests\\erp-ordem-servico-api.tests.csproj|solutionrelative:erp-ordem-servico-api.tests\\presentationtest\\controllers\\atividadecontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6A8C0C18-5821-48B0-8BA2-ED24A6B5D8C7}|erp-ordem-servico-api.tests\\erp-ordem-servico-api.tests.csproj|c:\\projetos\\laboratorio\\laboratorio.net.2024.2\\erp-ordem-servico-api.tests\\presentationtest\\databasefixture.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6A8C0C18-5821-48B0-8BA2-ED24A6B5D8C7}|erp-ordem-servico-api.tests\\erp-ordem-servico-api.tests.csproj|solutionrelative:erp-ordem-servico-api.tests\\presentationtest\\databasefixture.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6A8C0C18-5821-48B0-8BA2-ED24A6B5D8C7}|erp-ordem-servico-api.tests\\erp-ordem-servico-api.tests.csproj|c:\\projetos\\laboratorio\\laboratorio.net.2024.2\\erp-ordem-servico-api.tests\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{6A8C0C18-5821-48B0-8BA2-ED24A6B5D8C7}|erp-ordem-servico-api.tests\\erp-ordem-servico-api.tests.csproj|solutionrelative:erp-ordem-servico-api.tests\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,32 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 153,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ErpWebApplicationFactory.cs",
-              "DocumentMoniker": "C:\\projetos\\laboratorio\\laboratorio.net.2024.2\\erp-ordem-servico-api.tests\\ErpWebApplicationFactory.cs",
-              "RelativeDocumentMoniker": "erp-ordem-servico-api.tests\\ErpWebApplicationFactory.cs",
-              "ToolTip": "C:\\projetos\\laboratorio\\laboratorio.net.2024.2\\erp-ordem-servico-api.tests\\ErpWebApplicationFactory.cs",
-              "RelativeToolTip": "erp-ordem-servico-api.tests\\ErpWebApplicationFactory.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAUwBQAAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T23:31:31.622Z",
+              "DocumentIndex": 1,
+              "Title": "README.md",
+              "DocumentMoniker": "C:\\projetos\\laboratorio\\laboratorio.net.2024.2\\erp-ordem-servico-api.tests\\README.md",
+              "RelativeDocumentMoniker": "erp-ordem-servico-api.tests\\README.md",
+              "ToolTip": "C:\\projetos\\laboratorio\\laboratorio.net.2024.2\\erp-ordem-servico-api.tests\\README.md",
+              "RelativeToolTip": "erp-ordem-servico-api.tests\\README.md",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2024-07-15T01:12:53.693Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "AtividadeControllerTest.cs",
               "DocumentMoniker": "C:\\projetos\\laboratorio\\laboratorio.net.2024.2\\erp-ordem-servico-api.tests\\PresentationTest\\Controllers\\AtividadeControllerTest.cs",
               "RelativeDocumentMoniker": "erp-ordem-servico-api.tests\\PresentationTest\\Controllers\\AtividadeControllerTest.cs",
               "ToolTip": "C:\\projetos\\laboratorio\\laboratorio.net.2024.2\\erp-ordem-servico-api.tests\\PresentationTest\\Controllers\\AtividadeControllerTest.cs",
               "RelativeToolTip": "erp-ordem-servico-api.tests\\PresentationTest\\Controllers\\AtividadeControllerTest.cs",
-              "ViewState": "AQIAAC0AAAAAAAAAAAAkwFIAAAAAAAAA",
+              "ViewState": "AQIAACIAAAAAAAAAAAA2wCoAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T23:11:11.555Z",
+              "WhenOpened": "2024-07-15T01:08:24.847Z",
               "EditorCaption": ""
             },
             {
@@ -56,24 +52,7 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DatabaseFixture.cs",
-              "DocumentMoniker": "C:\\projetos\\laboratorio\\laboratorio.net.2024.2\\erp-ordem-servico-api.tests\\PresentationTest\\DatabaseFixture.cs",
-              "RelativeDocumentMoniker": "erp-ordem-servico-api.tests\\PresentationTest\\DatabaseFixture.cs",
-              "ToolTip": "C:\\projetos\\laboratorio\\laboratorio.net.2024.2\\erp-ordem-servico-api.tests\\PresentationTest\\DatabaseFixture.cs",
-              "RelativeToolTip": "erp-ordem-servico-api.tests\\PresentationTest\\DatabaseFixture.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAqwBQAAAA6AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T23:15:56.618Z",
-              "EditorCaption": ""
             }
           ]
         }

@@ -1,0 +1,1 @@
+dotnet test --filter "UC=Caso de uso XPTO"

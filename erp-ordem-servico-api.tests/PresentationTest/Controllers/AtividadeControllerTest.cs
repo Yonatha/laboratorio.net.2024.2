@@ -22,6 +22,9 @@ namespace erp_ordem_servico_api.tests.PresentationTest.Controllers
         }
 
         [Fact]
+        [Trait("UC", "Caso de uso A")]
+        [Trait("Endpoint", "POST /atividade")]
+        [Trait("Description", "Deve retornar Created (201) quando a atividade for cadastrada com sucesso.")]
         public async Task Post_ShouldReturnCreatedResult()
         {
             // Arrange
@@ -38,6 +41,9 @@ namespace erp_ordem_servico_api.tests.PresentationTest.Controllers
         }
 
         [Fact]
+        [Trait("UC", "Caso de uso Falha")]
+        [Trait("Endpoint", "POST /atividade")]
+        [Trait("Description", "Deve retornar BadRequest (400) quando a descrição não for informada.")]
         public async Task Post_ShouldReturnBadRequestResult()
         {
             // Arrange
@@ -58,6 +64,9 @@ namespace erp_ordem_servico_api.tests.PresentationTest.Controllers
         }
 
         [Fact]
+        [Trait("UC", "Caso de uso XPTO")]
+        [Trait("Endpoint", "GET /atividade/{id}")]
+        [Trait("Description", "Retorna um registro cadastrado OK (200).")]
         public async Task GetById_ShouldReturnOkResult()
         {
             // Arrange
@@ -69,6 +78,9 @@ namespace erp_ordem_servico_api.tests.PresentationTest.Controllers
         }
 
         [Fact]
+        [Trait("UC", "Caso de uso XPTO")]
+        [Trait("Endpoint", "GET /atividade/")]
+        [Trait("Description", "Retorna a lista de atividades cadastradas com OK (200).")]
         public async Task GetAll_ShouldReturnOkResult()
         {
             // Arrange
@@ -80,6 +92,9 @@ namespace erp_ordem_servico_api.tests.PresentationTest.Controllers
         }
 
         [Fact]
+        [Trait("UC", "Caso de uso XPTO")]
+        [Trait("Endpoint", "PUT /atividade/{id}")]
+        [Trait("Description", "Atualiza um registro cadastrado OK (200).")]
         public async Task Delete_ShouldReturnOkResult()
         {
             // Arrange
