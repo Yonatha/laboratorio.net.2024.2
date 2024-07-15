@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\erp-ordem-servico-api.props" />
-</Project>
