@@ -1,34 +1,72 @@
-# From .NET Core 3.0 you can use the command: `dotnet new gitignore` to generate a customizable .gitignore file
+# Ignore bin and obj directories
+**/bin/
+**/obj/
 
-*.swp
-*.*~
-project.lock.json
-.DS_Store
-*.pyc
+# Ignore build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa]ssets[Bb]undles/
+[Aa]ssets[Ss]treamingAssets/
 
-# Visual Studio Code
-.vscode
-
-# User-specific files
-*.suo
+# Ignore .NET user-specific files
 *.user
 *.userosscache
 *.sln.docstates
 
-# Build results
-[Dd]ebug/
-[Dd]ebugPublic/
-[Rr]elease/
-[Rr]eleases/
-x64/
-x86/
-build/
-bld/
-[Bb]in/
-[Oo]bj/
-msbuild.log
-msbuild.err
-msbuild.wrn
+# Ignore JetBrains Rider project files
+.idea/
+*.sln.iml
 
-# Visual Studio 2015
-.vs/
+# Ignore Visual Studio Code workspace settings
+.vscode/
+
+# Ignore NuGet packages
+*.nupkg
+*.snupkg
+.nuget/
+**/packages/
+
+# Ignore MSBuild project files
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Ignore StyleCop
+StyleCopReport.xml
+
+# Ignore ReSharper files
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# Ignore Xamarin files
+*.xamarin*
+*.vscode/settings.json
+
+# Ignore Rider's temporary file storage
+.idea/
+
+# Ignore tool specific files
+.ionide/
+
+# Ignore VS Code directories
+.vscode/
+.history/
+*.code-workspace
+
+# Ignore NCrunch
+*.ncrunch*
+
+# Ignore DocFx
+_docfx/
+
+# Ignore Azure Pipelines
+.azure-pipelines/
+
+# Ignore deployment files
+PublishOutput/
+
+# Ignore web publish folders
+.publish/
