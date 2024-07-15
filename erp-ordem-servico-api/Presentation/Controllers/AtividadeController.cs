@@ -12,16 +12,16 @@ namespace erp_ordem_servico_api.Presentation.Controllers
     public class AtividadeController : ControllerBase
     {
         private readonly ILogger<AtividadeController> _logger;
-        private readonly IGenericService<AtividadeRequestDto, AtividadeResponseDto, AtividadeEntity> _service;
+        private readonly IGenericService<AtividadeRequest, AtividadeResponse, AtividadeEntity> _service;
 
-        public AtividadeController(IGenericService<AtividadeRequestDto, AtividadeResponseDto, AtividadeEntity> service, ILogger<AtividadeController> logger)
+        public AtividadeController(IGenericService<AtividadeRequest, AtividadeResponse, AtividadeEntity> service, ILogger<AtividadeController> logger)
         {
             _service = service;
             _logger = logger;
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<AtividadeResponseDto>>> GetAll()
+        public async Task<ActionResult<List<AtividadeResponse>>> GetAll()
         {
             try
             {
@@ -40,7 +40,7 @@ namespace erp_ordem_servico_api.Presentation.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] AtividadeRequestDto request)
+        public async Task<IActionResult> Create([FromBody] AtividadeRequest request)
         {
             try
             {
@@ -49,13 +49,13 @@ namespace erp_ordem_servico_api.Presentation.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, $"Não foi possível cadastrar.");
+                _logger.LogError(ex, $"Nï¿½o foi possï¿½vel cadastrar.");
                 return StatusCode(500, "Erro interno do servidor.");
             }
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<AtividadeResponseDto>> GetById(int id)
+        public async Task<ActionResult<AtividadeResponse>> GetById(int id)
         {
             try
             {
@@ -85,13 +85,13 @@ namespace erp_ordem_servico_api.Presentation.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, $"Não foi possível deletar o registro {id}.");
+                _logger.LogError(ex, $"Nï¿½o foi possï¿½vel deletar o registro {id}.");
                 return StatusCode(500, "Erro interno do servidor.");
             }
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult<AtividadeResponseDto>> Update(int id, [FromBody] AtividadeRequestDto request)
+        public async Task<ActionResult<AtividadeResponse>> Update(int id, [FromBody] AtividadeRequest request)
         {
             try
             {

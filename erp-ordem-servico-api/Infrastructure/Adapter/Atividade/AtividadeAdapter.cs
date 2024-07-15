@@ -1,24 +1,20 @@
 using erp_ordem_servico_api.Domain.Entities;
-using erp_ordem_servico_api.Dto.OrdemServico;
+using LaboratorioDev.Dto.Atividade;
 
 namespace erp_ordem_servico_api.Infrastructure.Adapter.Atividade
 {
     public class AtividadeAdapter
     {
-        public OrdemServicoResponseDto ToDto(AtividadeEntity entity)
+        public AtividadeResponse ToDto(AtividadeEntity entity)
         {
-            return new OrdemServicoResponseDto
-            {
-                Id = entity.Id,
-                Descricao = entity.Descricao
-            };
+            return new AtividadeResponse(entity.Id, entity.Descricao);
         }
 
-        public AtividadeEntity ToEntity(OrdemServicoRequestDto requestDto)
+        public AtividadeEntity ToEntity(AtividadeRequest request)
         {
             return new AtividadeEntity
             {
-                Descricao = requestDto.Descricao
+                Descricao = request.Descricao
             };
         }
     }

@@ -9,10 +9,11 @@ public class MappingProfile : Profile
     {
         CreateMap<OrdemServicoDeleteRequestDto, OrdemServicoEntity>();
         CreateMap<OrdemServicoEntity, OrdemServicoDeleteResponseDto>();
-        CreateMap<OrdemServicoEntity, OrdemServicoResponseDto>();
+        CreateMap<OrdemServicoEntity, OrdemServicoResponse>();
+        CreateMap<OrdemServicoRequest, OrdemServicoEntity>();
 
 
-        CreateMap<AtividadeRequestDto, AtividadeEntity>();
-        CreateMap<AtividadeEntity, AtividadeResponseDto>();
+        CreateMap<AtividadeRequest, AtividadeEntity>();
+        CreateMap<AtividadeEntity, AtividadeResponse>();
     }
 }

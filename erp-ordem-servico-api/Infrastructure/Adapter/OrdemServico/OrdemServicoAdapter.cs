@@ -3,16 +3,12 @@ using erp_ordem_servico_api.Dto.OrdemServico;
 
 public class AtividadeAdapter
 {
-    public OrdemServicoResponseDto ToDto(OrdemServicoEntity ordemServico)
+    public OrdemServicoResponse ToDto(OrdemServicoEntity ordemServico)
     {
-        return new OrdemServicoResponseDto
-        {
-            Id = ordemServico.Numero,
-            Descricao = ordemServico.Descricao
-        };
+        return new(ordemServico.Numero, ordemServico.Descricao);
     }
 
-    public OrdemServicoEntity ToEntity(OrdemServicoRequestDto requestDto)
+    public OrdemServicoEntity ToEntity(OrdemServicoRequest requestDto)
     {
         return new OrdemServicoEntity
         {

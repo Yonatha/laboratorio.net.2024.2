@@ -28,7 +28,7 @@ namespace erp_ordem_servico_api.tests.PresentationTest.Controllers
         public async Task Post_ShouldReturnCreatedResult()
         {
             // Arrange
-            var atividade = new AtividadeRequestDto
+            var atividade = new AtividadeRequest
             {
                 Descricao = "Atividade 2"
             };
@@ -47,7 +47,7 @@ namespace erp_ordem_servico_api.tests.PresentationTest.Controllers
         public async Task Post_ShouldReturnBadRequestResult()
         {
             // Arrange
-            var atividade = new AtividadeRequestDto();
+            var atividade = new AtividadeRequest();
 
             // Act
             var response = await _client.PostAsJsonAsync("/atividade", atividade);

@@ -21,7 +21,7 @@ namespace erp_ordem_servico_api.Presentation.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<OrdemServicoResponseDto>>> GetAll()
+        public async Task<ActionResult<List<OrdemServicoResponse>>> GetAll()
         {
             try
             {
@@ -34,13 +34,13 @@ namespace erp_ordem_servico_api.Presentation.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Erro ao obter ordens de serviço.");
+                _logger.LogError(ex, "Erro ao obter ordens de serviï¿½o.");
                 return StatusCode(500, "Erro interno do servidor.");
             }
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<OrdemServicoResponseDto>> GetById(int id)
+        public async Task<ActionResult<OrdemServicoResponse>> GetById(int id)
         {
             try
             {
@@ -52,13 +52,13 @@ namespace erp_ordem_servico_api.Presentation.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, $"Erro ao obter ordens de serviço {id}.");
+                _logger.LogError(ex, $"Erro ao obter ordens de serviï¿½o {id}.");
                 return StatusCode(500, "Erro interno do servidor.");
             }
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] OrdemServicoRequestDto request)
+        public async Task<IActionResult> Create([FromBody] OrdemServicoRequest request)
         {
             try
             {
@@ -67,7 +67,7 @@ namespace erp_ordem_servico_api.Presentation.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, $"Não foi possível cadastrar a OS.");
+                _logger.LogError(ex, $"Nï¿½o foi possï¿½vel cadastrar a OS.");
                 return StatusCode(500, "Erro interno do servidor.");
             }
         }
@@ -85,13 +85,13 @@ namespace erp_ordem_servico_api.Presentation.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, $"Não foi possível deletar a OS {id}.");
+                _logger.LogError(ex, $"Nï¿½o foi possï¿½vel deletar a OS {id}.");
                 return StatusCode(500, "Erro interno do servidor.");
             }
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult<OrdemServicoResponseDto>> Update(int id, [FromBody] OrdemServicoRequestDto request)
+        public async Task<ActionResult<OrdemServicoResponse>> Update(int id, [FromBody] OrdemServicoRequest request)
         {
             try
             {
@@ -120,7 +120,7 @@ namespace erp_ordem_servico_api.Presentation.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, $"Erro ao tentar realizar a operação ");
+                _logger.LogError(ex, $"Erro ao tentar realizar a operaï¿½ï¿½o ");
                 return StatusCode(500, "Erro interno do servidor.");
             }
         }
