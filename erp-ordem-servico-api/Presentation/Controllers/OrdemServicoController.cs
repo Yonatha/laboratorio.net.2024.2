@@ -1,11 +1,13 @@
 using erp_ordem_servico_api.Dto.OrdemServico;
 using erp_ordem_servico_api.Infrastructure.Services.OrdemServico;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace erp_ordem_servico_api.Presentation.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [Authorize]
     public class OrdemServicoController : ControllerBase
     {
         private readonly IOrdemServicoService _service;
@@ -21,6 +23,8 @@ namespace erp_ordem_servico_api.Presentation.Controllers
         }
 
         [HttpGet]
+        //[Authorize (Roles = "BusinessGroup")]
+        [Authorize(Policy = "BusinessGroup")]
         public async Task<ActionResult<List<OrdemServicoResponse>>> GetAll()
         {
             try

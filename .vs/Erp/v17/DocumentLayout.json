@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\projetos\\laboratorio\\laboratorio.net.2024.2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6A8C0C18-5821-48B0-8BA2-ED24A6B5D8C7}|erp-ordem-servico-api.tests\\erp-ordem-servico-api.tests.csproj|c:\\projetos\\laboratorio\\laboratorio.net.2024.2\\erp-ordem-servico-api.tests\\presentationtest\\controllers\\atividadecontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6A8C0C18-5821-48B0-8BA2-ED24A6B5D8C7}|erp-ordem-servico-api.tests\\erp-ordem-servico-api.tests.csproj|solutionrelative:erp-ordem-servico-api.tests\\presentationtest\\controllers\\atividadecontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{98D52BE3-EB61-4D54-94EA-0ED5718753EC}|erp-ordem-servico-api\\erp-ordem-servico-api.csproj|c:\\projetos\\laboratorio\\laboratorio.net.2024.2\\erp-ordem-servico-api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98D52BE3-EB61-4D54-94EA-0ED5718753EC}|erp-ordem-servico-api\\erp-ordem-servico-api.csproj|solutionrelative:erp-ordem-servico-api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6A8C0C18-5821-48B0-8BA2-ED24A6B5D8C7}|erp-ordem-servico-api.tests\\erp-ordem-servico-api.tests.csproj|c:\\projetos\\laboratorio\\laboratorio.net.2024.2\\erp-ordem-servico-api.tests\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
-      "RelativeMoniker": "D:0:0:{6A8C0C18-5821-48B0-8BA2-ED24A6B5D8C7}|erp-ordem-servico-api.tests\\erp-ordem-servico-api.tests.csproj|solutionrelative:erp-ordem-servico-api.tests\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+      "AbsoluteMoniker": "D:0:0:{98D52BE3-EB61-4D54-94EA-0ED5718753EC}|erp-ordem-servico-api\\erp-ordem-servico-api.csproj|c:\\projetos\\laboratorio\\laboratorio.net.2024.2\\erp-ordem-servico-api\\authorizationgrouphandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98D52BE3-EB61-4D54-94EA-0ED5718753EC}|erp-ordem-servico-api\\erp-ordem-servico-api.csproj|solutionrelative:erp-ordem-servico-api\\authorizationgrouphandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98D52BE3-EB61-4D54-94EA-0ED5718753EC}|erp-ordem-servico-api\\erp-ordem-servico-api.csproj|c:\\projetos\\laboratorio\\laboratorio.net.2024.2\\erp-ordem-servico-api\\presentation\\controllers\\ordemservicocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98D52BE3-EB61-4D54-94EA-0ED5718753EC}|erp-ordem-servico-api\\erp-ordem-servico-api.csproj|solutionrelative:erp-ordem-servico-api\\presentation\\controllers\\ordemservicocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,34 +22,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 153,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 7,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "README.md",
-              "DocumentMoniker": "C:\\projetos\\laboratorio\\laboratorio.net.2024.2\\erp-ordem-servico-api.tests\\README.md",
-              "RelativeDocumentMoniker": "erp-ordem-servico-api.tests\\README.md",
-              "ToolTip": "C:\\projetos\\laboratorio\\laboratorio.net.2024.2\\erp-ordem-servico-api.tests\\README.md",
-              "RelativeToolTip": "erp-ordem-servico-api.tests\\README.md",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2024-07-15T01:12:53.693Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AtividadeControllerTest.cs",
-              "DocumentMoniker": "C:\\projetos\\laboratorio\\laboratorio.net.2024.2\\erp-ordem-servico-api.tests\\PresentationTest\\Controllers\\AtividadeControllerTest.cs",
-              "RelativeDocumentMoniker": "erp-ordem-servico-api.tests\\PresentationTest\\Controllers\\AtividadeControllerTest.cs",
-              "ToolTip": "C:\\projetos\\laboratorio\\laboratorio.net.2024.2\\erp-ordem-servico-api.tests\\PresentationTest\\Controllers\\AtividadeControllerTest.cs",
-              "RelativeToolTip": "erp-ordem-servico-api.tests\\PresentationTest\\Controllers\\AtividadeControllerTest.cs",
-              "ViewState": "AQIAACIAAAAAAAAAAAA2wCoAAAAOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-15T01:08:24.847Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
@@ -53,6 +31,57 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OrdemServicoController.cs",
+              "DocumentMoniker": "C:\\projetos\\laboratorio\\laboratorio.net.2024.2\\erp-ordem-servico-api\\Presentation\\Controllers\\OrdemServicoController.cs",
+              "RelativeDocumentMoniker": "erp-ordem-servico-api\\Presentation\\Controllers\\OrdemServicoController.cs",
+              "ToolTip": "C:\\projetos\\laboratorio\\laboratorio.net.2024.2\\erp-ordem-servico-api\\Presentation\\Controllers\\OrdemServicoController.cs",
+              "RelativeToolTip": "erp-ordem-servico-api\\Presentation\\Controllers\\OrdemServicoController.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAQwBkAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-16T01:09:22.359Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AuthorizationGroupHandler.cs",
+              "DocumentMoniker": "C:\\projetos\\laboratorio\\laboratorio.net.2024.2\\erp-ordem-servico-api\\AuthorizationGroupHandler.cs",
+              "RelativeDocumentMoniker": "erp-ordem-servico-api\\AuthorizationGroupHandler.cs",
+              "ToolTip": "C:\\projetos\\laboratorio\\laboratorio.net.2024.2\\erp-ordem-servico-api\\AuthorizationGroupHandler.cs",
+              "RelativeToolTip": "erp-ordem-servico-api\\AuthorizationGroupHandler.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-16T00:55:49.009Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\projetos\\laboratorio\\laboratorio.net.2024.2\\erp-ordem-servico-api\\Program.cs",
+              "RelativeDocumentMoniker": "erp-ordem-servico-api\\Program.cs",
+              "ToolTip": "C:\\projetos\\laboratorio\\laboratorio.net.2024.2\\erp-ordem-servico-api\\Program.cs",
+              "RelativeToolTip": "erp-ordem-servico-api\\Program.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAuwBMAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-16T00:21:54.919Z",
+              "EditorCaption": ""
             }
           ]
         }

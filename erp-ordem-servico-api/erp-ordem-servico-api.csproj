@@ -6,10 +6,12 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <InvariantGlobalization>true</InvariantGlobalization>
     <RootNamespace>erp_ordem_servico_api</RootNamespace>
+    <UserSecretsId>eac73591-a95f-4ffd-92a5-2d6c88d4063d</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.7" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="7.0.0-silver.1" />
@@ -20,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <InternalsVisibleTo Include="erp-ordem-servico-api.tests"/>
+    <InternalsVisibleTo Include="erp-ordem-servico-api.tests" />
   </ItemGroup>
 
 </Project>
